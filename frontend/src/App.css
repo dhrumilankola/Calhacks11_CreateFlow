@@ -1,0 +1,300 @@
+/* General dark theme styling */
+body {
+  background-color: #1e1e1e; /* Dark grey background */
+  color: #f5f5f5;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #0a0a0a; /* Darker grey for the navbar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  color: white;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-item a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-item a:hover {
+  color: #21E6C1;
+}
+
+.nav-item span {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ccc;
+}
+
+/* App layout */
+.App {
+  width: 80%;
+  padding-top: 100px;
+  padding-left: 60px;
+  text-align: left;
+}
+
+/* Headings */
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #f5f5f5;
+  margin-bottom: 20px; /* Reduced space between heading and options */
+  letter-spacing: 0.5px;
+}
+
+/* Progress bar for form steps */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #2b2b2b; /* Slightly lighter grey for progress bar */
+  margin-bottom: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 25%; /* Dynamically change based on progress */
+  height: 100%;
+  background-color: #21E6C1;
+  transition: width 0.4s ease;
+}
+
+/* Adjusted spacing for steps */
+.step {
+  margin-bottom: 60px; /* More space between steps */
+  animation: fadeInFromTop 0.8s ease-out;
+}
+
+/* Options and form styling */
+.options {
+  display: flex;
+  gap: 10px; /* Reduced space between buttons */
+  flex-wrap: wrap;
+  margin-bottom: 20px; /* Decreased margin between options and question */
+}
+
+/* Buttons for options */
+.option {
+  padding: 15px 50px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #168f87 0%, #1b5f68 100%);
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+}
+
+.option:hover {
+  background: linear-gradient(135deg, #278EA5 0%, #21E6C1 100%);
+  transform: translateY(-3px);
+}
+
+.option.selected {
+  opacity: 0.8;
+}
+
+/* Input field in Step4 should not span the entire width */
+.keyword-input input {
+  padding: 15px;
+  border: 1px solid #555;
+  background-color: #292929; /* Dark grey background for input */
+  color: white;
+  width: 60%;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+input::placeholder {
+  color: #888;
+}
+
+/* Submit button section */
+.submit-section {
+  margin-top: 80px;
+  text-align: center; /* Center the submit button */
+}
+
+button {
+  padding: 15px 50px;
+  background-color: #21E6C1;
+  color: #292929;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background-color: #278EA5;
+  transform: translateY(-3px);
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* Fade-in animation */
+@keyframes fadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Animation for fade in from below */
+@keyframes fadeInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Start from below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+/* Apply the fade in from below animation to each step */
+.step {
+  margin-bottom: 60px;
+  animation: fadeInFromBottom 0.8s ease-out; /* Add the animation here */
+  animation-fill-mode: forwards;
+  opacity: 0; /* Initially hide the questions */
+}
+
+/* When the questions are triggered to show, apply this class */
+.show {
+  opacity: 1;
+  animation: fadeInFromBottom 0.8s ease-out; /* Trigger the animation */
+}
+
+/* Center the initial message on the screen */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  text-align: center;
+}
+
+/* Typing animation for the text */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Make sure the text stays visible after typing animation */
+.typing-text {
+  font-size: 2.5rem;
+  color: #f5f5f5;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #21E6C1, #278EA5); /* Gradient text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid #f5f5f5; /* Create a cursor effect */
+  width: 100%; /* Set to 100% to retain the full text width */
+  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: #f5f5f5; }
+}
+
+/* Styling for the Begin button */
+.begin-button {
+  padding: 15px 40px;
+  background-color: #21E6C1;
+  color: #1e1e1e;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.begin-button:hover {
+  background-color: #278EA5;
+  transform: translateY(-3px);
+}
+
+.generate-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.generate-button {
+  padding: 12px 24px;
+  background-color: #21E6C1;
+  color: #1e1e1e;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.generate-button:hover:not(:disabled) {
+  background-color: #278EA5;
+  transform: translateY(-2px);
+}
+
+.generate-button:disabled {
+  background-color: #5a5a5a;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.tweets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .tweets-grid {
+    grid-template-columns: 1fr;
+  }
+}

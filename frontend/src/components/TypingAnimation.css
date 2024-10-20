@@ -1,0 +1,74 @@
+/* Fullscreen gradient background using the provided color scheme */
+body {
+    background: linear-gradient(135deg, #35374B, #344955, #50727B, #78A083);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white; /* General color for text */
+  }
+  
+  /* Gradient animation keyframes */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Remove card style; the text and button are now just placed directly */
+  .typing-animation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh; /* Full height for vertical centering */
+    padding: 0 20px; /* Add padding for smaller screens */
+  }
+  
+  /* Large text with light colors for contrast */
+  .typing-animation-container h1 {
+    font-size: 40px;
+    font-weight: 600;
+    color: #ffffff; /* Light text color for contrast */
+    margin-bottom: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #ffffff; /* White blinking cursor */
+    width: fit-content;
+    animation: caret-blink 0.75s step-end infinite;
+  }
+  
+  /* Styling for the "Begin" button to match color scheme */
+  .begin-button {
+    padding: 12px 24px;
+    background-color: #78A083; /* Lightest color from your scheme */
+    color: #35374B; /* Dark text color to match your scheme */
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .begin-button:hover {
+    background-color: #50727B; /* Darker color from your scheme on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+  }
+  
+  /* Blinking cursor animation */
+  @keyframes caret-blink {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #ffffff; /* White cursor to contrast with dark background */
+    }
+  }
+  

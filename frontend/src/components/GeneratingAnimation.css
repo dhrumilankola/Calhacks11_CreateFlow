@@ -1,0 +1,61 @@
+/* GeneratingAnimation.css */
+.generating-animation {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+
+.generating-animation h2 {
+  color: #21E6C1;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.agent-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.agent-list li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  background: rgba(33, 230, 193, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.agent-list li:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 2px solid #21E6C1;
+}
+
+.agent-list li.completed:before {
+  background-color: #21E6C1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.agent-list li:not(.completed) {
+  animation: pulse 1s infinite;
+}

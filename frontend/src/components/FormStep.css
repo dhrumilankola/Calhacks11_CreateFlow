@@ -1,0 +1,63 @@
+/* FormStep.css */
+.form-step {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+    margin-bottom: 20px;
+  }
+  
+  .form-step.visible {
+    opacity: 1;
+    max-height: 1000px; /* Adjust this value based on your content */
+  }
+  
+  .form-step h2 {
+    margin-bottom: 15px;
+    color: #f5f5f5;
+  }
+  
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .option {
+    padding: 10px 20px;
+    background-color: #2b2b2b;
+    border: 2px solid #21E6C1;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #f5f5f5;
+  }
+  
+  .option:hover {
+    background-color: #3a3a3a;
+    transform: translateY(-2px);
+  }
+  
+  .option.selected {
+    background-color: #21E6C1;
+    color: #1e1e1e;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(33, 230, 193, 0.3);
+  }
+  
+  .keyword-input input {
+    width: 100%;
+    padding: 10px;
+    background-color: #2b2b2b;
+    border: 2px solid #21E6C1;
+    border-radius: 5px;
+    color: #f5f5f5;
+    transition: border-color 0.3s ease;
+  }
+  
+  .keyword-input input:focus {
+    outline: none;
+    border-color: #278EA5;
+    box-shadow: 0 0 0 2px rgba(39, 142, 165, 0.3);
+  }

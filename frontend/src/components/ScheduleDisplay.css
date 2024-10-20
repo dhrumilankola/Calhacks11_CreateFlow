@@ -1,0 +1,53 @@
+/* ScheduleDisplay.css */
+.schedule-display {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #f5f5f5;
+  }
+  
+  .main-title {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #21E6C1;
+  }
+  
+  .schedule-card, .summaries-card {
+    background-color: rgba(41, 41, 41, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .schedule-card h2, .summaries-card h2 {
+    color: #21E6C1;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .schedule-card ul, .summaries-card ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .schedule-card li, .summaries-card li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  /* Style for emojis */
+  .schedule-card li::before,
+  .summaries-card li::before {
+    margin-right: 10px;
+  }
+  
+  /* Hover effect for list items */
+  .schedule-card li:hover,
+  .summaries-card li:hover {
+    background-color: rgba(33, 230, 193, 0.1);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
